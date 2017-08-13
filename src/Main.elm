@@ -1,44 +1,30 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, img)
-import Html.Attributes exposing (src)
-
-
----- MODEL ----
-
-
-type alias Model =
-    {}
+import View exposing (..)
+import Model exposing (..)
+import View exposing (..)
+import Update exposing (..)
+import Html exposing (Html)
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( {}, Cmd.none )
-
-
-
----- UPDATE ----
-
-
-type Msg
-    = NoOp
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    ( model, Cmd.none )
-
-
-
----- VIEW ----
-
-
-view : Model -> Html Msg
-view model =
-    div []
-        [ img [ src "/logo.svg" ] []
-        , div [] [ text "Your Elm App is working!" ]
-        ]
+    ( { groups =
+            [ { order = 1, name = "Saving", keys = [ { sequence = "SPC f s", name = "Save current file", order = 1 } ] }
+            , { order = 1, name = "Saving", keys = [ { sequence = "SPC f s", name = "asdf", order = 1 } ] }
+            , { order = 1, name = "Saving", keys = [ { sequence = "SPC f s", name = "qwer", order = 1 } ] }
+            , { order = 1, name = "Saving", keys = [ { sequence = "SPC f s", name = "zxcv", order = 1 } ] }
+            , { order = 1, name = "Saving", keys = [ { sequence = "SPC f s", name = "yuio", order = 1 } ] }
+            , { order = 1, name = "Saving", keys = [ { sequence = "SPC f s", name = "asdf", order = 1 } ] }
+            , { order = 1, name = "Saving", keys = [ { sequence = "SPC f s", name = "Save current file", order = 1 } ] }
+            , { order = 1, name = "Saving", keys = [ { sequence = "SPC f s", name = "asdf  qwer Save current file", order = 1 } ] }
+            , { order = 1, name = "asdf", keys = [ { sequence = "SPC f s", name = "current file", order = 1 } ] }
+            ]
+      , filteredGroups = Nothing
+      , filterValue = ""
+      }
+    , Cmd.none
+    )
 
 
 
