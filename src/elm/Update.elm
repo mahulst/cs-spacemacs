@@ -1,6 +1,6 @@
-module Update exposing (..)
+module Update exposing (Msg(..), update)
 
-import Model exposing (..)
+import Model exposing (filterGroups, Model)
 
 
 type Msg

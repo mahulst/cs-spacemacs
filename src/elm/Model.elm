@@ -1,4 +1,4 @@
-module Model exposing (..)
+module Model exposing (Group, Key, Model, filterGroups)
 
 import Maybe.Extra exposing (combine)
 

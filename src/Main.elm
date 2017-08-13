@@ -1,9 +1,8 @@
 module Main exposing (..)
 
-import View exposing (..)
-import Model exposing (..)
-import View exposing (..)
-import Update exposing (..)
+import View exposing (view)
+import Model exposing (Model)
+import Update exposing (update, Msg)
 import Html exposing (Html)
 
 

@@ -5,8 +5,8 @@ import Element.Attributes exposing (src, placeholder, spacing, padding, width, p
 import Element.Events exposing (onInput)
 import Html exposing (Html, div)
 import Style exposing (..)
-import Model exposing (..)
-import Update exposing (..)
+import Model exposing (Model, Group, Key)
+import Update exposing (Msg(..))
 
 
 type Styles
@@ -41,7 +41,7 @@ view model =
 
 searchBar : Model -> Element Styles variation Msg
 searchBar model =
-    el SearchBar [] (inputText None [ placeholder "Filter keybindings", onInput Filter ] model.filterValue)
+    el SearchBar [] (inputText None [ placeholder "Filter keybindings", onInput Update.Filter ] model.filterValue)
 
 
 listGroups : List Group -> Element Styles variation msg
